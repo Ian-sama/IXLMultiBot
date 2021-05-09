@@ -11,18 +11,20 @@ from colorama import Fore, Back, Style
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
+
+import chromedriver_autoinstaller  # To automatically get and install chromedriver
 colorama.init()
 
 
 # config
 chrome_options = Options()
 # change the directory to your chrome driver. for more instructions read the readme file.os
-PATH = ('C:\\Program Files (x86)\\Chrome\\Application\\chromedriver.exe') 
 options = webdriver.ChromeOptions() 
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 options.add_argument("user-data-dir=C:\\Users\\gabri\\Local\\Google\\Chrome\\")
 
-driver = webdriver.Chrome(PATH)
+chromedriver_autoinstaller.install()
+driver = webdriver.Chrome()
 
 
 
